@@ -4,7 +4,7 @@
 
    ```
     vim /etc/selinux/config
-    SELINUX=disable
+    SELINUX=disabled
    ```
 
 ###### 2.编辑sysctrl.conf

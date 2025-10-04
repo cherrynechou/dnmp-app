@@ -78,8 +78,10 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp --with-x
 #3. redis event扩展安装
 RUN pecl install redis \
     && pecl install event \
+    && pecl install swoole \
     && docker-php-ext-enable redis \
-    && docker-php-ext-enable event
+    && docker-php-ext-enable event \
+    && docker-php-ext-enable swoole
 
 #5 Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
@@ -89,7 +91,7 @@ RUN  mv /usr/local/etc/php/conf.d/docker-php-ext-event.ini /usr/local/etc/php/co
 
 #6.清理
 RUN apk del .build-deps \
-    && rm -rf /var/cache/apk/*
+    && rm -rf /var/cache/apk/* && rm -rf /tmp/pear/temp/swoole && rm -rf /tmp/pear/temp/redis
 
 
 # 设置容器启动时执行的命令（可选）

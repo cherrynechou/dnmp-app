@@ -20,6 +20,9 @@ services:
       - ./logs/supervisor:/var/log/supervisor
       - ./run/supervisor:/var/run/supervisor
       - ./run/php:/var/run/php
+    depends_on:
+      - redis
+      - mysql   
     healthcheck:
       test: [ "CMD", "php-fpm", "-t" ]
       interval: 30s

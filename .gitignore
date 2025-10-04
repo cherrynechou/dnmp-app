@@ -1,0 +1,5 @@
+# 忽略当前文件夹下所有文件上传 git
+/.idea
+
+# 排除 .gitignore 文件
+!.gitignore

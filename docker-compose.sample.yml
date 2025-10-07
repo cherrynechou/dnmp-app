@@ -2,10 +2,10 @@ version: '3.8'
 services:
   app:
     build:
-      context: ./deploy/php
+      context: ./deploy/app
       args:
         TZ: ${TZ}
-    container_name: php82-fpm
+    container_name: app-php
     restart: always
     ports:
       - "9000:9000"

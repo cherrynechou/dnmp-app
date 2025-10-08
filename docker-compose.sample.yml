@@ -5,7 +5,7 @@ services:
       context: ./deploy/app
       args:
         TZ: ${TZ}
-    container_name: app-php
+    container_name: php82-fpm-app
     restart: always
     ports:
       - "9000:9000"

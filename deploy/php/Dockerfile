@@ -8,16 +8,6 @@ ARG TZ
 # 修改时间
 RUN ln -snf "/usr/share/zoneinfo/${TZ}" /etc/localtime && echo "{$TZ}" > /etc/timezone
 
-#复制达梦驱动文件
-COPY dmdbms.tar.gz /opt/
-
-COPY dm.conf  /etc/ld.so.conf.d
-
-# 解压tar文件
-RUN tar -xzf /opt/dmdbms.tar.gz -C /opt 
-
-RUN ldconfig
-
 # 安装系统依赖
 RUN apt-get update && apt-get install -y \
     libpng-dev \

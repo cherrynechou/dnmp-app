@@ -13,8 +13,8 @@ services:
       - ./servers/php/config/php.ini:/usr/local/etc/php/php.ini:ro
       - ./servers/php/config/php-fpm.conf:/usr/local/etc/php-fpm.conf
       - ./servers/php/config/php-fpm.d:/usr/local/etc/php-fpm.d
-      - ./servers/supervisor/supervisord.conf:/etc/supervisord.conf:ro                     #supervisor配置文件
-      - ./servers/supervisor/conf.d:/etc/supervisor.d                                      #配置文件
+      - ./servers/supervisor/supervisord.conf:/etc/supervisor/supervisord.conf:ro                     #supervisor配置文件
+      - ./servers/supervisor/conf.d:/etc/supervisor/conf.d                                      #配置文件
       - ./www:/var/www/html
       - ./logs/php:/var/log/php                                                            #日志文件
       - ./logs/supervisor:/var/log/supervisor

@@ -2,7 +2,7 @@ version: '3.8'
 services:
   app:
     build:
-      context: ./deploy/app
+      context: ./deploy/php
       args:
         TZ: ${TZ}
     container_name: php82-fpm-app
